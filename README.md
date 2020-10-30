@@ -18,3 +18,8 @@ Next, type ```pip install -r requirements.txt``` to install all the libraries.
 
 Now, you are ready to run the website. Type ```python main.py``` to start the server.
 Then, go to http://127.0.0.1:5000/ in your browser! 
+
+## Screenshots
+![](homePage.JPG)
+
+![](signInPage.JPG)
