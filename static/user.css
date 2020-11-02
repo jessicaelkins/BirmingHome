@@ -1,0 +1,111 @@
+.topnav {
+  background-color: white;
+  overflow: hidden;
+  margin-top: -8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  border-bottom: 2px solid #ddd;
+}
+
+.topnav a {
+  float: right;
+  color: #333333;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  padding: 14px 16px;
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+
+}
+
+.topnav a:hover {
+  background-color: #c7c7c7;
+}
+
+.topnav a.active {
+  background-color: #d6d6d6;
+}
+
+.topnav img {
+  float: left;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.topnav p {
+  font-family: 'Lobster', sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #333333;
+  padding-top: 5px;
+  padding-bottom: 0;
+  padding-left: 5px;
+  padding-right: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+body {
+  background-image: url("neighborhood.jpg");
+}
+
+.borderDiv {
+  background: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-bottom: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+.borderDiv h2 {
+  margin: auto;
+  width: 20%;
+}
+
+.borderDiv img {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  margin-left: 80px;
+  display: inline;
+  float: left;
+}
+
+.nameDiv h1 {
+  display: inline-block;
+  text-align: center;
+  padding-left: 95px;
+  padding-top: 8px;
+  padding-bottom: 80px;
+  margin-top: 0px;
+}
+
+#info1 {
+  margin-left: 250px;
+  margin-top: -70px;
+}
+
+#info2 {
+  margin-left: 250px;
+  margin-top: 0px;
+  padding-bottom: 5px;
+}
+
+#info3 {
+  margin-left: 83px;
+  padding-top: 10px;
+  margin-right: 60px;
+}
+
+#edit {
+  margin-left: 400px;
+}

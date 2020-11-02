@@ -1,0 +1,105 @@
+.topnav {
+  background-color: white;
+  overflow: hidden;
+  margin-top: -8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  border-bottom: 2px solid #ddd;
+}
+
+.topnav a {
+  float: right;
+  color: #333333;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  padding: 14px 16px;
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+
+}
+
+.topnav a:hover {
+  background-color: #c7c7c7;
+}
+
+.topnav a.active {
+  background-color: #d6d6d6;
+}
+
+.topnav img {
+  float: left;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.topnav p {
+  font-family: 'Lobster', sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  color: #333333;
+  padding-top: 5px;
+  padding-bottom: 0;
+  padding-left: 5px;
+  padding-right: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+body {
+  background-image: url("neighborhood.jpg");
+}
+
+.borderDiv {
+  background: white;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-bottom: 50px;
+  font-family: 'Lato', sans-serif;
+}
+
+.borderDiv h2 {
+  margin: auto;
+  width: 30%;
+}
+
+.confirmButton {
+  margin: auto;
+  margin-left: 400px;
+  margin-top: 8px;
+  width: 10%;
+  font-size: 15px;
+  padding: 4px 8px;
+  background-color: #777777;
+  border-radius: 4px;
+  color: white;
+}
+
+.about {
+  margin: auto;
+  width: 60%;
+}
+
+.picture {
+  margin: auto;
+  width: 60%;
+}
+
+.number {
+  margin: auto;
+  width: 60%;
+}
+
+.aboutMeArea {
+  width: 500px;
+  height: 100px;
+  resize: none;
+}
