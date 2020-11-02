@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BirmingHome - Home Page</title>
+
+    <link href="{{ url_for('static', filename='homepage.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="topnav">
+      <img src="{{url_for('static', filename='bhomelogo.jpg')}}">
+      <p>BirmingHome</p>
+      <a href="/"><strong>Logout</strong></a>
+      <a href="user/{{email}}"><strong>Profile</strong></a>
+      <a class="active" href="homepage"><strong>Home</strong></a>
+    </div><br>
+
+    <div class="filterBy">
+      <form method="POST">
+        <h3><u>Filter By:</u></h3>
+        <strong>Location:</strong><br>
+        {{ form.hidden_tag() }}
+        {{ form.location1() }} {{ form.location1.label }}
+        <br>
+        {{ form.location2() }} {{ form.location2.label }}
+        <br>
+        {{ form.location3() }} {{ form.location3.label }}
+        <br>
+        {{ form.location4() }} {{ form.location4.label }}
+        <br>
+        {{ form.location5() }} {{ form.location5.label }}
+        <br>
+        {{ form.location6() }} {{ form.location6.label }}
+        <br><hr>
+        <strong>Type:</strong><br>
+        {{ form.type1() }} {{ form.type1.label }}
+        <br>
+        {{ form.type2() }} {{ form.type2.label }}
+        <br>
+        {{ form.type3() }} {{ form.type3.label }}
+        <br>
+        {{ form.type4() }} {{ form.type4.label }}
+        <br>
+        {{ form.type5()}} {{ form.type5.label }}
+        <br>
+        {{ form.type6() }} {{ form.type6.label }}
+        <br>
+        {{ form.type7()}} {{ form.type7.label }}
+        <br>
+        {{ form.type8() }} {{ form.type8.label }}
+        <br>
+        {{ form.filter(class="filterButton") }}
+      </form>
+    </div>
+
+    <div class="borderDiv">
+    <div class="postForm">
+      <form method="post"><br>
+        <h2>Create a post</h2><br>
+        <label for="inputTitle"><strong>Title:</strong></label>
+        <input name="title" id="inputTitle" placeholder="Title" required autofocus>
+
+        <label for="inputType"><strong>Type:</strong></label>
+        <select id="inputType" name="type" required>
+          <option value="">Not Selected</option>
+          <option value="plumbing">Plumbing</option>
+          <option value="cleaning">Cleaning</option>
+          <option value="pet">Pet</option>
+          <option value="yardwork">Yard Work</option>
+          <option value="painting">Painting</option>
+          <option value="hvac">Heating/Cooling</option>
+          <option value="electrical">Electrical</option>
+          <option value="otherTpye">Other</option>
+        </select>
+
+        <label for="inputLocation"><strong>Location:</strong></label>
+        <select id="inputLocation" name="location" required>
+          <option value="">Not Selected</option>
+          <option value="downtown">Downtown</option>
+          <option value="hoover">Hoover</option>
+          <option value="meadowbrook">Meadowbrook</option>
+          <option value="homewood">Homewood</option>
+          <option value="vestavia">Vestavia</option>
+          <option value="otherPlace">Other</option>
+        </select>
+        <br><br>
+
+        <label for="inputDesc"><strong>Description of the job:</strong></label><br>
+        <textarea id="inputDesc" name="description" required style="width:550px; height:120px; resize: none;"></textarea><br>
+        <button type="submit">POST</button>
+      </form>
+    </div>
+    <br><br>
+    <hr style="width: 90%; margin: auto;"><br>
+
+    <div class="showPosts">
+      <h2>View Posts</h2><br>
+      {% if location_one %}
+        {% for post in locationOne %}
+          <h3>{{post.titleOfJob}}</h3>
+          <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+          <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+          <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+          <p class="postDesc">{{post.descOfJob}}</p>
+          <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if location_two %}
+        {% for post in locationTwo %}
+          <h3>{{post.titleOfJob}}</h3>
+          <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+          <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+          <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+          <p class="postDesc">{{post.descOfJob}}</p>
+          <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if location_three %}
+        {% for post in locationThree %}
+          <h3>{{post.titleOfJob}}</h3>
+          <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+          <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+          <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+          <p class="postDesc">{{post.descOfJob}}</p>
+          <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if location_four %}
+        {% for post in locationFour %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if location_five %}
+        {% for post in locationFive %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if location_six %}
+        {% for post in locationSix %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_one %}
+        {% for post in typeOne %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_two %}
+        {% for post in typeTwo %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_three %}
+        {% for post in typeThree %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_four %}
+        {% for post in typeFour %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_five %}
+        {% for post in typeFive %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_six %}
+        {% for post in typeSix %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_seven %}
+        {% for post in typeSeven %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if type_eight %}
+        {% for post in typeEight %}
+        <h3>{{post.titleOfJob}}</h3>
+        <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+        <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+        <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+        <p class="postDesc">{{post.descOfJob}}</p>
+        <br><hr><br>
+        {% endfor %}
+      {% endif %}
+
+      {% if noneSelected %}
+        {% for post in all_posts %}
+            <h3>{{post.titleOfJob}}</h3>
+            <p class="postID"><strong>User:</strong> <a href="user/{{post.email}}">{{post.fullname}}</a></p>
+            <p class="postID"><strong>Location:</strong> {{post.locationOfJob}}</p>
+            <p class="postID"><strong>Type:</strong> {{post.typeOfJob}}</p>
+            <p class="postDesc">{{post.descOfJob}}</p>
+            <br><hr><br>
+          {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  </body>
+</html>

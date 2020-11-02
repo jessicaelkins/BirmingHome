@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BirmingHome - Edit Your Profile</title>
+
+    <link href="{{ url_for('static', filename='editprofile.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="topnav">
+      <img src="{{url_for('static', filename='bhomelogo.jpg')}}">
+      <p>BirmingHome</p>
+      <a href="/"><strong>Logout</strong></a>
+      <a class="active" href="user/{{email}}"><strong>Profile</strong></a>
+      <a href="{{ url_for('homepage') }}"><strong>Home</strong></a>
+    </div>
+
+  <div class="borderDiv">
+    <br>
+    <h2>Edit Your Profile Page</h2><br><br>
+    <form method="POST">
+      <div class="picture">
+        <strong><label for="inputPicture" >Profile Picture:</label></strong> <br>
+        <input name="profilePic" id="inputPicture" value="{{ dbProfilePic }}">
+      </div>
+      <div class="number">
+      <br>
+      <strong><label for="inputNumber">Phone Number:</label></strong> <br>
+      <input name="phoneNumber" id="inputNumber" value=" {{ dbPhoneNumber }}">
+      </div>
+      <br>
+      <div class="about">
+      <strong><label for="inputAboutMe">About Me:</label></strong> <br>
+      <textarea class="aboutMeArea" id="inputAboutMe" name="aboutMe">{{ dbAboutMe }}</textarea>
+      </div>
+      <br>
+      <button class="confirmButton" type="submit">Update</button>
+    </form>
+  </div>
+
+  </body>
+</html>

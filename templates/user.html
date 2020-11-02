@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BirmingHome - Profile Page</title>
+
+    <link href="{{ url_for('static', filename='user.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="topnav">
+      <img src="{{url_for('static', filename='bhomelogo.jpg')}}">
+      <p>BirmingHome</p>
+      <a href="/"><strong>Logout</strong></a>
+      {% if sameUser == True %}
+      <a class="active" href=""><strong>Profile</strong></a>
+      {% else %}
+      <a class="active" href=""><strong>Profile</strong></a>
+      {% endif %}
+
+      <a href="{{ url_for('homepage') }}"><strong>Home</strong></a>
+    </div>
+
+  <div class="borderDiv">
+    <br>
+    <h2>Profile Page</h2><br><br>
+    <span class="nameDiv"><h1> {{ fullname }} </h1></span>
+    <img src="{{ getProfile.profilePic }}">
+    <p id="info1"><strong><u>Phone Number:</u></strong> {{ getProfile.phoneNumber }}</p>
+    <p id="info2"><strong><u>Email:</u></strong> {{userEmail}} </p>
+    <p id="info3"><strong><u>About Me:</u></strong> {{ getProfile.aboutMe }} </p>
+    <br><br><br><br><br><br>
+    {% if sameUser == True %}
+      <a id="edit" href="{{ url_for('editprofile') }}"><strong>Edit Profile</strong></a>
+    {% endif %}
+  </div>
+
+  </body>
+</html>
