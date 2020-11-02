@@ -18,7 +18,7 @@ Next, type ```pip install -r requirements.txt``` to install all the libraries.
 
 Then, download this project into your Flask environment. 
 
-Now, you are ready to run the website. Type ```python main.py``` to start the server.
+Now, you are ready to run the website. Navigate to the project, and type ```python main.py``` to start the server.
 Then, go to http://127.0.0.1:5000/ in your browser! 
 
 ## Screenshots
